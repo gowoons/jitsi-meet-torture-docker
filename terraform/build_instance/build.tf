@@ -10,3 +10,8 @@ resource "scaleway_instance_server" "build_server" {
     cloud-init = file("${path.module}/cloud-init.sh")
   }
 }
+
+output "build_volume_id" {
+  description = "ID of the volume from which a snapshot must be done"
+  value       = scaleway_instance_server.build_server.root_volume[0].volume_id
+}

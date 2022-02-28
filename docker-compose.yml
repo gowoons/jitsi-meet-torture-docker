@@ -10,10 +10,10 @@ services:
   #   volumes:
   #     - ./terraform/create_state_bucket:/app
 
-  terraform:
+  terraform-build:
     image: hashicorp/terraform:0.15.3
     env_file: env.d/terraform
     user: ${DOCKER_USER:-1000}
     working_dir: /app
     volumes:
-      - ./terraform:/app
+      - ./terraform/build_instance:/app

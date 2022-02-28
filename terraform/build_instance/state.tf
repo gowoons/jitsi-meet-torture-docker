@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket = "jitsi-k8s-terraform"
-    key = "torture.tfstate"
+    key = "torture-build.tfstate"
     region = "fr-par"
     endpoint = "https://s3.fr-par.scw.cloud"
     skip_region_validation = true
