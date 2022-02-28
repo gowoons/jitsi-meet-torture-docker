@@ -1,3 +1,4 @@
 docker/.env
 env.d/terraform
+terraform/.terraform
 terraform/build_instance/.terraform

@@ -20,3 +20,5 @@ cd jitsi-meet-torture-docker #/docker
 cp .env.template .env
 docker-compose build
 docker-compose pull
+
+echo $(date) > /madate

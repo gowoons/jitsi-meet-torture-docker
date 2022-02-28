@@ -2,14 +2,6 @@ version: '3.4'
 
 services:
 
-  # terraform-state:
-  #   image: hashicorp/terraform:0.15.3
-  #   env_file: env.d/terraform
-  #   user: ${DOCKER_USER:-1000}
-  #   working_dir: /app
-  #   volumes:
-  #     - ./terraform/create_state_bucket:/app
-
   terraform-build:
     image: hashicorp/terraform:0.15.3
     env_file: env.d/terraform
@@ -17,3 +9,11 @@ services:
     working_dir: /app
     volumes:
       - ./terraform/build_instance:/app
+
+  terraform:
+    image: hashicorp/terraform:0.15.3
+    env_file: env.d/terraform
+    user: ${DOCKER_USER:-1000}
+    working_dir: /app
+    volumes:
+      - ./terraform:/app
